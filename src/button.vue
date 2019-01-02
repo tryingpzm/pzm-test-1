@@ -1,11 +1,11 @@
 <template>
-    <button class="g-button">确定</button>
+    <button class="g-button">确定d</button>
 </template>
 <script>
     export default {
     }
 </script>
-<style rel="stylesheet/scss"type="text/scss" lang="scss">
+<style rel="stylesheet/scss" type="text/scss" lang="scss">
     .g-button{
         font-size:var(--base-font-size);
         height:var(--base-height);
