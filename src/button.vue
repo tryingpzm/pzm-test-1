@@ -1,6 +1,7 @@
 <template>
     <button class="g-button" :class="{[`icon-${iconPosition}`]:true}">
         <g-icon class="icon" v-if="icon" :name="icon"></g-icon>
+        <g-icon class="loading" name="loading"></g-icon>
         <slot class="button-name"></slot>
     </button>
 </template>
@@ -21,6 +22,15 @@
     }
 </script>
 <style rel="stylesheet/scss" type="text/scss" lang="scss">
+    @keyframes rotate {
+        0%{
+            transform:rotate(0);
+        }
+        100%{
+            transform:rotate(360deg);
+        }
+
+    }
     .g-button{
         font-size:var(--base-font-size);
         height:var(--base-height);
@@ -32,6 +42,9 @@
         align-items: center;
         justify-content: center;
         vertical-align: top;        //避免inline不对齐
+        .loading{
+            animation:rotate 1s linear infinite;
+        }
         &:hover{
             border-color:var(--border-color-hover)
         }
