@@ -8,4 +8,9 @@ Vue.component('g-icon',Icon)
 
 let app=new Vue({
     el:"#app",
+    data(){
+        return {
+            loading1:false
+        }
+    }
 })
