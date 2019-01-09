@@ -17,3 +17,15 @@ let app=new Vue({
         }
     }
 })
+
+{
+    let constructor=Vue.extend(Button)
+    let button=new constructor({
+        propsData:{
+            icon:'setting'
+        }
+    });
+    button.$mount('#test')
+    let use=button.$el.querySelector('use');
+    console.log(use);
+}
