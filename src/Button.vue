@@ -50,6 +50,7 @@
             animation:rotate 1s linear infinite;
         }
         &:hover{
+            cursor: pointer;
             border-color:var(--border-color-hover)
         }
         &:active{
