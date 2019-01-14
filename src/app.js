@@ -18,14 +18,94 @@ let app=new Vue({
     }
 })
 
+import chai from 'chai'
+const expect =chai.expect;
+//测试icon参数
 {
     let constructor=Vue.extend(Button)
-    let button=new constructor({
+    let vm=new constructor({
         propsData:{
             icon:'setting'
         }
     });
-    button.$mount('#test')
-    let use=button.$el.querySelector('use');
+    vm.$mount()
+    let use=vm.$el.querySelector('use');
     console.log(use);
+    expect(use.getAttribute('xlink:href')).to.equal('#i-setting')
+    //测试完成清理元素及对象
+    vm.$el.remove();
+    vm.$destroy();
+}
+//测试loading参数
+{
+    let constructor=Vue.extend(Button)
+    let vm=new constructor({
+        propsData:{
+            icon:'setting',
+            loading:true,
+        }
+    });
+    vm.$mount()
+    let use=vm.$el.querySelector('use');
+    console.log(use);
+    expect(use.getAttribute('xlink:href')).to.equal('#i-loading')
+    //测试完成清理元素及对象
+    vm.$el.remove();
+    vm.$destroy();
+}
+//测试 iconPosition默认(不挂载页面的话是不会渲染css的)
+{
+    let div=document.createElement('div')
+    document.body.appendChild(div)
+    let constructor=Vue.extend(Button)
+    let vm=new constructor({
+        propsData:{
+            icon:'setting',
+        }
+    });
+    vm.$mount(div)
+    let svg=vm.$el.querySelector('svg');
+    expect(window.getComputedStyle(svg).order).to.equal('0')
+    //测试完成清理元素及对象
+    vm.$el.remove();
+    vm.$destroy();
+}
+//测试 iconPosition
+{
+    let div=document.createElement('div')
+    document.body.appendChild(div)
+    let constructor=Vue.extend(Button)
+    let vm=new constructor({
+        propsData:{
+            icon:'setting',
+            iconPosition:'right'
+        }
+    });
+    vm.$mount(div)
+    let svg=vm.$el.querySelector('svg');
+    expect(window.getComputedStyle(svg).order).to.equal('1')
+    //测试完成清理元素及对象
+    vm.$el.remove();
+    vm.$destroy();
+
+}
+//测试 click（需要用mock来判断函数是否运行）
+{
+    let constructor=Vue.extend(Button)
+    let vm=new constructor({
+        propsData:{
+            icon:'setting',
+        }
+    });
+    vm.$mount()
+
+    vm.$on('click',()=>{
+        console.log('xxxxx')
+    })
+    vm.$el.click();
+    
+    //测试完成清理元素及对象
+    vm.$el.remove();
+    vm.$destroy();
+
 }
