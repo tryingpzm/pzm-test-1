@@ -90,6 +90,8 @@ const expect =chai.expect;
 
 }
 //测试 click（需要用mock来判断函数是否运行）
+import spies from 'chai-spies'
+chai.use(spies)
 {
     let constructor=Vue.extend(Button)
     let vm=new constructor({
@@ -98,12 +100,14 @@ const expect =chai.expect;
         }
     });
     vm.$mount()
-
-    vm.$on('click',()=>{
-        console.log('xxxxx')
+    //spy是被间谍监听的函数
+    let spy=chai.spy(()=>{
+        console.log('xx')
     })
+    vm.$on('click',spy)
     vm.$el.click();
-    
+
+    expect(spy).to.have.been.called();
     //测试完成清理元素及对象
     vm.$el.remove();
     vm.$destroy();
