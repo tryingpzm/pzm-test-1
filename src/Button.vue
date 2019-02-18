@@ -6,6 +6,7 @@
     </button>
 </template>
 <script>
+    import gIcon from './Icon'
     export default {
         props:{
             icon:{
@@ -22,6 +23,9 @@
                     return value==='left'||value==='right'
                 }
             }
+        },
+        components:{
+            'g-icon':gIcon
         }
     }
 </script>
