@@ -1,6 +1,6 @@
 {
   "name": "gulu-pzm-1",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description":"test的&&不支持，所以分开写watch和npx karma start",
   "main": "dist/index.js",
   "scripts": {
