@@ -1,8 +1,8 @@
 {
   "name": "gulu-pzm-1",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description":"test的&&不支持，所以分开写watch和npx karma start",
-  "main": "dist/index.js",
+  "main": "index.js",
   "scripts": {
     "dev-test": "parcel watch test/* --no-cache && karma start",
     "test": "parcel build test/* --no-minify && karma start --single-run",

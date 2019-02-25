@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/tryingpzm/pzm-test-1.svg?branch=master)](https://travis-ci.org/tryingpzm/pzm-test-1)
+
 ## 介绍
 ## 开始使用
 
