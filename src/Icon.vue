@@ -6,6 +6,7 @@
 </template>
 
 <script type="text/ecmascript-6">
+    import "./svg"
     export default {
         props:{
             name:{
