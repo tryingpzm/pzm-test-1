@@ -11,7 +11,7 @@
     ```
     *,*::before,*::after{box-sizing:border-box}
     ```
-    目前还需要用户设置默认颜色及引入 pzm-gulu-1/index.css（后续会持续改进）
+    目前还需要用户设置默认颜色及引入 pzm-gulu-1/index.css（后续会持续改进为SCSS变量）
     
     ```
     :root {
@@ -40,7 +40,7 @@ Vue.component('Button',Button)
 
 4，引入svg symbols
 ```
-
+<script src="//at.alicdn.com/t/font_997565_bx9m1eq83pt.js"></script>
 ```
 ## 文档
 ## 提问

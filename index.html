@@ -38,23 +38,29 @@
 </head>
 <body>
 <div id="app">
-    <g-button :loading="loading1" @click="loading1=!loading1" icon="setting" icon-position="left">
-        按钮
-    </g-button>
-    <g-button-group>
-        <g-button icon="left"  icon-position="left">
-            上一页
-        </g-button>
+    <g-input value="张三"></g-input>
+    <g-input value="李四" :disabled="true"></g-input>
+    <g-input value="王五" :readonly="true"></g-input>
+    <div>
+        <g-input value="二麻子" error="输入有误，请校验"></g-input>
+    </div>
+    <!--<g-button :loading="loading1" @click="loading1=!loading1" icon="setting" icon-position="left">-->
+        <!--按钮-->
+    <!--</g-button>-->
+    <!--<g-button-group>-->
+        <!--<g-button icon="left"  icon-position="left">-->
+            <!--上一页-->
+        <!--</g-button>-->
 
-        <g-button   icon-position="left">
-            gd
-        </g-button>
-        <g-button icon="right"  icon-position="left">
-            下一页
-        </g-button>
-        <!--挂载单元测试组件 -->
-        <div id="test"></div>
-    </g-button-group>
+        <!--<g-button   icon-position="left">-->
+            <!--gd-->
+        <!--</g-button>-->
+        <!--<g-button icon="right"  icon-position="left">-->
+            <!--下一页-->
+        <!--</g-button>-->
+        <!--&lt;!&ndash;挂载单元测试组件 &ndash;&gt;-->
+        <!--<div id="test"></div>-->
+    <!--</g-button-group>-->
 </div>
 <script src="./src/app.js"></script>
 <!--<script src="//at.alicdn.com/t/font_997565_bx9m1eq83pt.js"></script>-->

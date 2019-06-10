@@ -29,7 +29,7 @@
         }
     }
 </script>
-<style rel="stylesheet/scss" type="text/scss" lang="scss">
+<style rel="stylesheet/scss" type="text/scss" lang="scss" scoped>
     @keyframes rotate {
         0%{
             transform:rotate(0);
