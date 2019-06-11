@@ -1,9 +1,18 @@
 <template>
     <div class="wrapper" :class="{error}">
-        <input :disabled="disabled" :readonly="readonly" :value="value" type="text">
+        <input :disabled="disabled"
+               :readonly="readonly"
+               :value="value"
+               type="text"
+               @focus="$emit('focus',$event.target.value)"
+               @input="$emit('input',$event.target.value)"
+               @change="$emit('change',$event.target.value)"
+               @blur="$emit('blur',$event.target.value)"
+
+        >
         <template ng-if="error">
             <Icon name="error" class="icon-error"></Icon>
-            <span>{{error}}</span>
+            <span class="icon-message">{{error}}</span>
         </template>
     </div>
 </template>
@@ -16,7 +25,7 @@
         },
         props:{
             value:{
-                type:String,
+                type:[String,Number],
             },
             disabled:{
                 type:Boolean,

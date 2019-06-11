@@ -13,7 +13,13 @@ let app=new Vue({
     el:"#app",
     data(){
         return {
-            loading1:false
+            loading1:false,
+            message:3333,
+        }
+    },
+    watch:{
+        message:function(val){
+            console.log('message新值：'+val)
         }
     }
 })
