@@ -1,45 +1,49 @@
 <template>
-    <div class="col" :style="{paddingLeft:gutter/2+'px',paddingRight:gutter/2+'px'}" :class="{[`col-${span}`]:!!span,[`offset-${offset}`]:!!offset}">
-        <div style="border: 1px solid red;height:100%">
+    <div class="col" :style="colStyle" :class="colClasses">
             <slot></slot>
-        </div>
     </div>
 </template>
 
 <script>
     export default {
         name: "",
-        props:{
-            span:[Number,String],
-            offset:[Number,String],
+        props: {
+            span: [Number, String],
+            offset: [Number, String],
         },
-        data(){
+        data() {
             return {
-                gutter:0,
+                gutter: 0,
             }
         },
-        watch:{
-            gutter:function(val){
-                // this.$set(this,'gutter',val);
-            }
+        computed: {
+            colStyle: function () {
+                return {
+                    paddingLeft: this.gutter / 2 + 'px',
+                    paddingRight: this.gutter / 2 + 'px'
+                }
+            },
+            colClasses: function () {
+                return {
+                    [`col-${this.span}`]:!!this.span,
+                    [`offset-${this.offset}`]:!!this.offset
+                }
+            },
         }
     }
 </script>
 
 <style rel="stylesheet/scss" type="text/scss" lang="scss" scoped>
-    .col{
+    .col {
         height: 100px;
-        /*background: grey;*/
-        /*border: 1px solid red;*/
-
-        @for $n from 1 through 24{
-            &.col-#{$n}{
-                width:($n/24)*100%;
+        @for $n from 1 through 24 {
+            &.col-#{$n} {
+                width: ($n/24)*100%;
             }
         }
-        @for $n from 1 through 24{
-            &.offset-#{$n}{
-                margin-left:($n/24)*100%;
+        @for $n from 1 through 24 {
+            &.offset-#{$n} {
+                margin-left: ($n/24)*100%;
             }
         }
     }
