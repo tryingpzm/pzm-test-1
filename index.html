@@ -38,13 +38,20 @@
 </head>
 <body>
 <div id="app">
-    <g-input value="张三"></g-input>
-    <g-input value="李四" :disabled="true"></g-input>
-    <g-input value="王五" :readonly="true"></g-input>
-    <g-input v-model="message"></g-input>
-    <div>
-        <g-input value="二麻子" error="输入有误，请校验"></g-input>
-    </div>
+    <g-row>
+        <g-col :span="2"></g-col>
+        <g-col :span="22"></g-col>
+    </g-row>
+    <!-- g-input测试 -->
+    <!--<g-input value="张三"></g-input>-->
+    <!--<g-input value="李四" :disabled="true"></g-input>-->
+    <!--<g-input value="王五" :readonly="true"></g-input>-->
+    <!--<g-input v-model="message"></g-input>-->
+    <!--<div>-->
+        <!--<g-input value="二麻子" error="输入有误，请校验"></g-input>-->
+    <!--</div>-->
+
+    <!-- g-button测试 -->
     <!--<g-button :loading="loading1" @click="loading1=!loading1" icon="setting" icon-position="left">-->
         <!--按钮-->
     <!--</g-button>-->
